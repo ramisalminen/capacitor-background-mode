@@ -22,6 +22,9 @@
   "bugs": {
     "url": "https://github.com/anuradev/capacitor-background-mode.git/issues"
   },
+  "dependencies": {
+    "@anuradev/capacitor-background-mode": "github:heffthedev/capacitor-background-mode"
+  },
   "keywords": [
     "capacitor",
     "plugin",
