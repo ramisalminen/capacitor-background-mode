@@ -3,6 +3,9 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+    android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
+    android:minSdkVersion="34" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -12,7 +15,9 @@
         <service
             android:name=".BackgroundModeService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback"
+            >
         </service>
 
     </application>
