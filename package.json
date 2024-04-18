@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heffthedev/capacitor-background-mode.git.git"
+    "url": "git+https://github.com/anuradev/capacitor-background-mode.git.git"
   },
   "bugs": {
-    "url": "https://github.com/heffthedev/capacitor-background-mode.git/issues"
+    "url": "https://github.com/anuradev/capacitor-background-mode.git/issues"
   },
   "keywords": [
     "capacitor",
