@@ -11,6 +11,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
 import android.os.Binder;
 import android.os.Build;
@@ -95,12 +96,12 @@ public class BackgroundModeService extends Service {
         if (!isSilent) {
             // startForeground(NOTIFICATION_ID, createNotification());
             if (Build.VERSION.SDK_INT >= 34) {
-                service.startForeground(
+                startForeground(
                         NOTIFICATION_ID,
                         createNotification(),
                         ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
             } else {
-                service.startForeground(
+                startForeground(
                         NOTIFICATION_ID,
                         createNotification());
             }           
