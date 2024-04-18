@@ -93,7 +93,17 @@ public class BackgroundModeService extends Service {
     private void keepAwake() {
         boolean isSilent = mSettings.getSilent();
         if (!isSilent) {
-            startForeground(NOTIFICATION_ID, createNotification());
+            // startForeground(NOTIFICATION_ID, createNotification());
+            if (Build.VERSION.SDK_INT >= 34) {
+                service.startForeground(
+                        NOTIFICATION_ID,
+                        createNotification(),
+                        ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
+            } else {
+                service.startForeground(
+                        NOTIFICATION_ID,
+                        createNotification());
+            }           
         }
 
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
