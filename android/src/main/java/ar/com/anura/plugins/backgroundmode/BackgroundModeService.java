@@ -99,7 +99,7 @@ public class BackgroundModeService extends Service {
                 startForeground(
                         NOTIFICATION_ID,
                         createNotification(),
-                        ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION);
+                        ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
             } else {
                 startForeground(
                         NOTIFICATION_ID,

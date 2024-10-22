@@ -2,14 +2,20 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" android:minSdkVersion="34" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" android:minSdkVersion="34" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application>
 
-        <service android:name=".BackgroundModeService" android:enabled="true" android:exported="true" android:foregroundServiceType="location">
+        <service android:name=".BackgroundModeService" android:enabled="true" android:exported="true" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Application is a professional driver app targeted on predefined users and application needs to stay up and running in the background and be accessible immediately without loading."/>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="On application start a pin code is asked from the user. This is used for identifying user for requests. Foreground service prevents the need to ask this again if application goes into background."/>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Users need to respond immediately to job offers coming through websocket so even if application is in the background opening app needs to be fast."/>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="App needs to handle messages coming through websocket to process data by comparing it to current state and decide if user needs to be notified."/>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="App needs to send location all the time to the server. This foreground service keeps application active in the background."/>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="App notifies drivers when driver is approaching to a stop. Foreground service keeps application awake to do this and is immediately ready for use."/>
         </service>
 
     </application>
