@@ -99,12 +99,12 @@ public class BackgroundModeService extends Service {
                 startForeground(
                         NOTIFICATION_ID,
                         createNotification(),
-                        ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
+                        ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION);
             } else {
                 startForeground(
                         NOTIFICATION_ID,
                         createNotification());
-            }           
+            }
         }
 
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
